@@ -37,6 +37,7 @@ public class XMLUtils {
 	//读取xml文件，并根据指定标签名返回对应的文本,读取使用sax
 	public static void getInfo(InputStream filepath,String name){
 		try {
+			
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser parser = factory.newSAXParser();
             XMLReader xr = parser.getXMLReader();

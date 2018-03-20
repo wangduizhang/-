@@ -64,9 +64,6 @@ public class RootWindow extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	private RootWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 780);
@@ -103,7 +100,6 @@ public class RootWindow extends JFrame {
 		//System.out.println(0000);
 		//加入平流沉砂池面板
 		tabbedPane.addTab("平流式沉砂池", null, PlWindow.getPlWindow(), null);
-		
 		//加入曝气沉砂池面板
 		 JPanel puqipanel = new JPanel();
 		tabbedPane.addTab("曝气沉砂池", null, puqipanel, null);
