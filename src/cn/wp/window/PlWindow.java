@@ -16,7 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 import cn.wp.myclass.MyJTextField;
+import cn.wp.myclass.factory.JTextFieldFactory;
 import cn.wp.utils.Utils;
 
 public class PlWindow extends JPanel{
@@ -24,7 +27,7 @@ public class PlWindow extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	private static PlWindow plWindow = new PlWindow();
-	
+	private JTextFieldFactory jtFactory = new JTextFieldFactory("/res/Prompt.xml");
 	private MyJTextField inputQ;
 	private MyJTextField inputkz;
 	private MyJTextField inputv;
@@ -85,7 +88,7 @@ public class PlWindow extends JPanel{
 		label_1.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_1);
 
-		inputQ = new MyJTextField("最大流量");
+		inputQ = jtFactory.getJText("最大流量");
 
 
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputQ, 0, SpringLayout.NORTH, panel_2);
@@ -109,7 +112,7 @@ public class PlWindow extends JPanel{
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(lblNewLabel);
 
-		inputkz = new MyJTextField("总变化系数");
+		inputkz = jtFactory.getJText("总变化系数");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputkz, -4, SpringLayout.NORTH, label_1);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputkz, 6, SpringLayout.EAST, lblNewLabel);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputkz, -88, SpringLayout.EAST, panel_2);
@@ -123,7 +126,7 @@ public class PlWindow extends JPanel{
 		label_3.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_3);
 
-		inputv = new MyJTextField("流速");
+		inputv = jtFactory.getJText("流速");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputv, -4, SpringLayout.NORTH, label_3);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputv, 78, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputv, 0, SpringLayout.EAST, inputQ);
@@ -143,7 +146,7 @@ public class PlWindow extends JPanel{
 		label_4.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_4);
 
-		inputt = new MyJTextField("停留时间");
+		inputt = jtFactory.getJText("停留时间");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputt, -4, SpringLayout.NORTH, label_3);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputt, 293, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputt, 0, SpringLayout.EAST, inputkz);
@@ -175,7 +178,7 @@ public class PlWindow extends JPanel{
 		label.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label);
 
-		inputh2 = new MyJTextField("有效水深");
+		inputh2 = jtFactory.getJText("有效水深");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputh2, -4, SpringLayout.NORTH, label);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputh2, 6, SpringLayout.EAST, label);
 		inputh2.setText("0.3");
@@ -195,7 +198,7 @@ public class PlWindow extends JPanel{
 		label_7.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_7);
 
-		inputday = new MyJTextField("排砂时间间隔");
+		inputday = jtFactory.getJText("排砂时间间隔");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputday, -4, SpringLayout.NORTH, label);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputday, 293, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputday, 0, SpringLayout.EAST, inputkz);
@@ -214,7 +217,7 @@ public class PlWindow extends JPanel{
 		label_9.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_9);
 
-		inputpai = new MyJTextField("污水排砂量");
+		inputpai = jtFactory.getJText("污水排砂量");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputpai, -4, SpringLayout.NORTH, label_9);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputpai, 293, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputpai, 0, SpringLayout.EAST, inputkz);
@@ -235,7 +238,7 @@ public class PlWindow extends JPanel{
 		label_10.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_10);
 
-		inputdoudi = new MyJTextField("斗底宽");
+		inputdoudi = jtFactory.getJText("斗底宽");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputdoudi, -4, SpringLayout.NORTH, label_10);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputdoudi, 6, SpringLayout.EAST, label_10);
 		inputdoudi.setText("0.5");
@@ -255,7 +258,7 @@ public class PlWindow extends JPanel{
 		label_12.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_12);
 
-		inputh1 = new MyJTextField("超高");
+		inputh1 = jtFactory.getJText("超高");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputh1, -4, SpringLayout.NORTH, label_12);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputh1, 6, SpringLayout.EAST, label_12);
 		inputh1.setText("0.3");
@@ -275,7 +278,7 @@ public class PlWindow extends JPanel{
 		label_14.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_14);
 
-		inputqj = new MyJTextField("斗壁倾角");
+		inputqj = jtFactory.getJText("斗壁倾角");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputqj, -4, SpringLayout.NORTH, label_12);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputqj, 293, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputqj, 0, SpringLayout.EAST, inputkz);
@@ -295,7 +298,7 @@ public class PlWindow extends JPanel{
 		lblNewLabel_5.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(lblNewLabel_5);
 
-		inputpodu = new MyJTextField("池底坡度");
+		inputpodu = jtFactory.getJText("池底坡度");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputpodu, -4, SpringLayout.NORTH, lblNewLabel_5);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputpodu, 6, SpringLayout.EAST, lblNewLabel_5);
 		inputpodu.setText("0.06");
@@ -307,7 +310,7 @@ public class PlWindow extends JPanel{
 		lblshi.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(lblshi);
 
-		inputmin = new MyJTextField("最小流速砂斗数");
+		inputmin = jtFactory.getJText("最小流速砂斗数");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputmin, -4, SpringLayout.NORTH, lblshi);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputmin, 0, SpringLayout.WEST, inputkz);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputmin, -88, SpringLayout.EAST, panel_2);
@@ -328,7 +331,7 @@ public class PlWindow extends JPanel{
 		label_22.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_2.add(label_22);
 
-		inputQmin = new MyJTextField("最小流量");
+		inputQmin = jtFactory.getJText("最小流量");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputQmin, -4, SpringLayout.NORTH, lblNewLabel_5);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputQmin, 293, SpringLayout.WEST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, inputQmin, 0, SpringLayout.EAST, inputkz);
@@ -342,7 +345,7 @@ public class PlWindow extends JPanel{
 		sl_panel_2.putConstraint(SpringLayout.SOUTH, label_24, 0, SpringLayout.SOUTH, lblshi);
 		panel_2.add(label_24);
 
-		inputshanum = new MyJTextField("砂斗个数");
+		inputshanum = jtFactory.getJText("砂斗个数");
 		inputshanum.setText("4");
 		sl_panel_2.putConstraint(SpringLayout.NORTH, inputshanum, -4, SpringLayout.NORTH, lblshi);
 		sl_panel_2.putConstraint(SpringLayout.WEST, inputshanum, 0, SpringLayout.WEST, inputQ);
@@ -364,7 +367,7 @@ public class PlWindow extends JPanel{
 		label_5.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_5);
 
-		outLL = new MyJTextField("长度");
+		outLL = jtFactory.getJText("长度");
 		sl_panel_3.putConstraint(SpringLayout.WEST, outLL, 91, SpringLayout.WEST, panel_3);
 		sl_panel_3.putConstraint(SpringLayout.NORTH, label_5, 5, SpringLayout.NORTH, outLL);
 		sl_panel_3.putConstraint(SpringLayout.EAST, label_5, -5, SpringLayout.WEST, outLL);
@@ -386,7 +389,7 @@ public class PlWindow extends JPanel{
 		lblNewLabel_2.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(lblNewLabel_2);
 
-		outA = new MyJTextField("水流断面积");
+		outA = jtFactory.getJText("水流断面积");
 		outA.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outA, -4, SpringLayout.NORTH, label_5);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outA, 6, SpringLayout.EAST, lblNewLabel_2);
@@ -406,7 +409,7 @@ public class PlWindow extends JPanel{
 		label_2.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_2);
 
-		outB = new MyJTextField("池总宽度");
+		outB = jtFactory.getJText("池总宽度");
 		outB.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outB, -4, SpringLayout.NORTH, label_2);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outB, 0, SpringLayout.WEST, outLL);
@@ -426,7 +429,7 @@ public class PlWindow extends JPanel{
 		label_6.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_6);
 
-		outjhck = new MyJTextField("校核长宽比");
+		outjhck = jtFactory.getJText("校核长宽比");
 		outjhck.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outjhck, -4, SpringLayout.NORTH, label_2);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outjhck, 329, SpringLayout.WEST, panel_3);
@@ -439,7 +442,7 @@ public class PlWindow extends JPanel{
 		label_11.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_11);
 
-		outvv = new MyJTextField("所需沉砂斗容积和");
+		outvv = jtFactory.getJText("所需沉砂斗容积和");
 		outvv.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outvv, -4, SpringLayout.NORTH, label_11);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outvv, 0, SpringLayout.WEST, outA);
@@ -465,7 +468,7 @@ public class PlWindow extends JPanel{
 		label_17.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_17);
 
-		outch3 = new MyJTextField("沉砂室高度");
+		outch3 = jtFactory.getJText("沉砂室高度");
 		outch3.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outch3, -4, SpringLayout.NORTH, label_17);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outch3, 5, SpringLayout.EAST, label_17);
@@ -479,7 +482,7 @@ public class PlWindow extends JPanel{
 		lblM_9.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(lblM_9);
 
-		outV0 = new MyJTextField("设计砂斗容积");
+		outV0 = jtFactory.getJText("设计砂斗容积");
 		outV0.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outV0, -4, SpringLayout.NORTH, label_16);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outV0, 329, SpringLayout.WEST, panel_3);
@@ -500,7 +503,7 @@ public class PlWindow extends JPanel{
 		lblNewLabel_6.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(lblNewLabel_6);
 
-		outHeight = new MyJTextField("池总高度");
+		outHeight = jtFactory.getJText("池总高度");
 		outHeight.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outHeight, -4, SpringLayout.NORTH, lblNewLabel_6);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outHeight, 91, SpringLayout.WEST, panel_3);
@@ -520,7 +523,7 @@ public class PlWindow extends JPanel{
 		label_18.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
 		panel_3.add(label_18);
 
-		outtop = new MyJTextField("沉砂斗上口宽");
+		outtop = jtFactory.getJText("沉砂斗上口宽");
 		outtop.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outtop, -4, SpringLayout.NORTH, label_18);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outtop, 329, SpringLayout.WEST, panel_3);
@@ -540,7 +543,7 @@ public class PlWindow extends JPanel{
 		sl_panel_3.putConstraint(SpringLayout.WEST, label_19, 0, SpringLayout.WEST, label_5);
 		panel_3.add(label_19);
 
-		outhh33 = new MyJTextField("斗高");
+		outhh33 = jtFactory.getJText("斗高");
 		outhh33.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outhh33, -4, SpringLayout.NORTH, label_18);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outhh33, 0, SpringLayout.WEST, outLL);
@@ -560,7 +563,7 @@ public class PlWindow extends JPanel{
 		sl_panel_3.putConstraint(SpringLayout.EAST, label_20, 0, SpringLayout.EAST, lblNewLabel_2);
 		panel_3.add(label_20);
 
-		outVmin = new MyJTextField("最小流速");
+		outVmin = jtFactory.getJText("最小流速");
 		sl_panel_3.putConstraint(SpringLayout.NORTH, outVmin, -2, SpringLayout.NORTH, label_20);
 		sl_panel_3.putConstraint(SpringLayout.WEST, outVmin, 0, SpringLayout.WEST, outA);
 		sl_panel_3.putConstraint(SpringLayout.EAST, outVmin, 0, SpringLayout.EAST, outA);

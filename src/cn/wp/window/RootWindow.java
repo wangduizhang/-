@@ -14,29 +14,17 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTextPane;
 import java.awt.Insets;
 import java.awt.Font;
-import java.awt.Color;
 
 
 import javax.swing.UIManager;
-import javax.swing.SpringLayout;
-import javax.swing.JLabel;
-
-import javax.swing.ImageIcon;
-
-
-import javax.swing.border.TitledBorder;
-
-import cn.wp.myclass.MyJTextField;
-import cn.wp.utils.Utils;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 
 
 public class RootWindow extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static JPanel contentPane;
 	private static JTextPane tishi;
 	private static JTabbedPane tabbedPane;
